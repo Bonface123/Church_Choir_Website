@@ -1,0 +1,20 @@
+<?php
+include 'includes/config.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["image"])) {
+    $imageName = basename($_FILES["image"]["name"]);
+    $targetDir = "uploads/";
+    $targetFile = $targetDir . time() . "_" . $imageName;
+    
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $targetFile)) {
+        $caption = htmlspecialchars($_POST["caption"]);
+        $stmt = $conn->prepare("INSERT INTO gallery (image_url, caption) VALUES (?, ?)");
+        $stmt->bind_param("ss", $targetFile, $caption);
+        $stmt->execute();
+        $stmt->close();
+        echo "<script>alert('Image uploaded successfully!'); window.location.href='gallery.php';</script>";
+    } else {
+        echo "<script>alert('Failed to upload image.'); window.location.href='gallery.php';</script>";
+    }
+}
+?>

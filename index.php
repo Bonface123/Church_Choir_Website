@@ -10,7 +10,7 @@
             <h1>Welcome to Crown Misters</h1>
             <p>Sing to the Lord a new song! - Psalm 96:1</p>
             <a href="join.php" class="btn">Join Our Choir</a>
-            <a href="https://www.youtube.com/channel/yourchannel" class="btn btn-alt" target="_blank">Watch on YouTube</a>
+            <a href="https://www.youtube.com/channel/crownministers" class="btn btn-alt" target="_blank">Watch on YouTube</a>
         </div>
     </section>
 
@@ -110,15 +110,6 @@
         <h2>Join Crown Misters</h2>
         <p>Want to be part of our choir? Reach out to us and join our mission.</p>
         <a href="join.php" class="btn">Join Us Now</a>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section id="newsletter">
-        <h2>Stay Updated</h2>
-        <form action="subscribe.php" method="POST">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit" class="btn">Subscribe</button>
-        </form>
     </section>
 
     <!-- Contact -->
